@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tsc .",
+    "build": "tsc",
     "lint": "eslint .",
     "start": "ts-node src/index.ts",
     "test": "jest"
