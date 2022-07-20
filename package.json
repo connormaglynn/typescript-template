@@ -3,7 +3,7 @@
     "build": "tsc",
     "lint": "eslint .",
     "start": "ts-node src/index.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@types/jest": "^28.1.5",

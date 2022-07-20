@@ -1,3 +1,5 @@
+import { createHello } from './hello'
+
 export const helloWorld = () => {
-  return "Hello World";
+  return createHello("It's a me").sayHello()
 }
