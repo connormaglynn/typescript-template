@@ -1,15 +1,15 @@
 import { helloWorld } from './index'
-import { MaybeMockedDeep, mocked } from 'jest-mock'
+import { mocked, Mocked } from 'jest-mock'
 import { createHello, Hello } from './hello'
 
 jest.mock('./hello')
 
-let mockCreateHello: MaybeMockedDeep<(name: string) => Hello>
-let mockHello: MaybeMockedDeep<Hello>
+let mockCreateHello: Mocked<(name: string) => Hello>
+let mockHello: Mocked<Hello>
 
 beforeEach(() => {
-  mockCreateHello = mocked(createHello, true)
-  mockHello = mocked(new Hello('World'), true)
+  mockCreateHello = mocked(createHello)
+  mockHello = mocked(new Hello('World'))
 
   mockCreateHello.mockImplementation(() => mockHello)
   mockHello.sayHello.mockImplementation(() => 'Hello World Mocked')
